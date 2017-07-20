@@ -5,7 +5,7 @@ namespace MarkdownParser
 {
     public class NativeFunctions
     {
-        [DllImport("libpeg-markdown.a", EntryPoint = "markdown_to_string")]
+        [DllImport("peg-markdown.dll", EntryPoint = "markdown_to_string")]
         internal static extern IntPtr MarkdownToStringInternal(
             [MarshalAs(UnmanagedType.LPStr)] string text,
             MarkdownExtension extensions,
