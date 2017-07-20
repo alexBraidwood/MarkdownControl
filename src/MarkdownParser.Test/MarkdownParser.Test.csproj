@@ -93,12 +93,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\external\peg-markdown\peg-markdown.dll">
-      <Link>peg-markdown.dll</Link>
+    <Content Include="..\MarkdownParser\x64-bin\glib-2-vs10.dll">
+      <Link>x64-bin\glib-2-vs10.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\MarkdownParser\x64-bin\libintl.dll">
+      <Link>x64-bin\libintl.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\MarkdownParser\x64-bin\peg-markdown.dll">
+      <Link>x64-bin\peg-markdown.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\MarkdownParser\x86-bin\glib-2-vs10.dll">
+      <Link>x86-bin\glib-2-vs10.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\MarkdownParser\x86-bin\libintl.dll">
+      <Link>x86-bin\libintl.dll</Link>
+    </Content>
+    <Content Include="..\MarkdownParser\x86-bin\peg-markdown.dll">
+      <Link>x86-bin\peg-markdown.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>MOVE $(TargetDir)$(PlatformName)-bin\*.dll $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
