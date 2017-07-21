@@ -76,12 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Native\ElementContents.cs" />
-    <Compile Include="Native\Link.cs" />
-    <Compile Include="Native\MarkdownElement.cs" />
     <Compile Include="MarkdownExtension.cs" />
     <Compile Include="MarkdownFormat.cs" />
-    <Compile Include="MarkdownKey.cs" />
     <Compile Include="MarkdownParser.cs" />
     <Compile Include="Native\InteropFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
