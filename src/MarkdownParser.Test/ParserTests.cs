@@ -16,5 +16,12 @@ namespace MarkdownParser.Test
             string htmlFromMarkdown = MarkdownParser.MarkdownToString("#Hello!", MarkdownExtension.Smart, MarkdownFormat.Html);
             Assert.AreEqual(htmlFromMarkdown, "<h1>Hello!</h1>");
         }
+
+        [TestCase(Category = "XAML Tests")]
+        public void MarkdownHyperlinkToXaml()
+        {
+            string xamlFromMarkdown = MarkdownParser.MarkdownToString("[Hello!](www.google.com)", MarkdownExtension.Smart, MarkdownFormat.WpfXaml);
+            Assert.AreEqual(xamlFromMarkdown, "<Hyperlink NavigateUri=\"www.google.com\">Hello!</Hyperlink>");
+        }
     }
 }
